@@ -161,6 +161,6 @@
             -ms-transition: 3s;
             -o-transition: 3s;
             transition: 1.5s;
-            transform: translate(-110px, 0);
+            transform: translate(-80px, 0);
         }
     }
