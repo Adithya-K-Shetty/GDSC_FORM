@@ -1,5 +1,6 @@
 /**THIRD FROM SLIDING FROM RIGHT TO LEFT AND OCCUPIES CENTER */
 function callThirdForm() {
+    document.getElementById('navDot3').checked = true;
     let container_name = document.getElementById('response');
     container_name.classList.add('formTranslatePage4');
     var fadeEffect = setInterval(function() {
@@ -36,6 +37,7 @@ submitBtn.addEventListener('click', function(event) {
 
 /**SECOND FROM SLIDING FROM RIGHT TO LEFT AND OCCUPIES CENTER*/
 function callSecondForm() {
+    document.getElementById('navDot2').checked = true;
     let container_name = document.getElementById('page2');
     container_name.classList.add('formTranslatePage2');
     var fadeEffect = setInterval(function() {
