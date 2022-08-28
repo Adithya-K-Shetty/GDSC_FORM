@@ -1,3 +1,209 @@
+//GETTING USER DATA
+const userNameInput = document.querySelector('#userName');
+const userEmailInput = document.querySelector('#userEmail');
+const userGitHubInput = document.querySelector('#userGitHub');
+const userLinkedinInput = document.querySelector('#userLinkedin');
+const userDiscordInput = document.querySelector('#userDiscord');
+const form = document.querySelector('#userData');
+
+//CHECKING USER NAME
+const checkUsername = () => {
+    let valid = false;
+    const min = 3,
+        max = 25;
+
+    const username = userNameInput.value.trim();
+
+    if (!isRequired(username)) {
+        showError(userNameInput, 'Username cannot be blank.');
+    } else if (!isBetween(username.length, min, max)) {
+        showError(
+            userNameInput,
+            `Username must be between ${min} and ${max} characters.`
+        );
+    } else {
+        showSuccess(userNameInput);
+        valid = true;
+    }
+    return valid;
+};
+
+//CHECKING EMAIL
+const checkEmail = () => {
+    let valid = false;
+    const email = userEmailInput.value.trim();
+    if (!isRequired(email)) {
+        showError(userEmailInput, 'Email cannot be blank.');
+    } else if (!isEmailValid(email)) {
+        showError(userEmailInput, 'Email is not valid.');
+    } else {
+        showSuccess(userEmailInput);
+        valid = true;
+    }
+    return valid;
+};
+
+//CHECKING GITHUB
+const checkGitHub = () => {
+    let valid = false;
+    const github = userGitHubInput.value.trim();
+    if (!isRequired(github)) {
+        showError(userGitHubInput, 'Email cannot be blank.');
+    } else if (!isGitHubValid(github)) {
+        showError(userGitHubInput, 'Email is not valid.');
+    } else {
+        showSuccess(userGitHubInput);
+        valid = true;
+    }
+    return valid;
+};
+
+//CHECKING LINKEDIN
+const checkLinkeDin = () => {
+    let valid = false;
+    const linkedin = userLinkedinInput.value.trim();
+    if (!isRequired(linkedin)) {
+        showError(userLinkedinInput, 'Email cannot be blank.');
+    } else if (!isLinkedinValid(linkedin)) {
+        showError(userLinkedinInput, 'Email is not valid.');
+    } else {
+        showSuccess(userLinkedinInput);
+        valid = true;
+    }
+    return valid;
+};
+
+//CHECKING DISCORD
+const checkDiscord = () => {
+    let valid = false;
+    const discord = userDiscordInput.value.trim();
+    if (!isRequired(discord)) {
+        showError(userDiscordInput, 'Email cannot be blank.');
+    } else {
+        showSuccess(userDiscordInput);
+        valid = true;
+    }
+    return valid;
+};
+
+//REGEX FOR EMAIL
+const isEmailValid = (email) => {
+    const re =
+        /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+};
+
+//CHECKING VALID GITHUB URL
+const isGitHubValid = (github) => {
+    let linkArray = github.split('.');
+    if (linkArray[0] == 'https://github') return true;
+    else return false;
+};
+
+//CHECKING VALID LINKEDIN URL
+const isLinkedinValid = (linkedin) => {
+    let linkArray = linkedin.split('.');
+    if (linkArray[1] == 'linkedin') return true;
+    else return false;
+};
+
+//CHECKING WHETHER THE INPUT IS EMPTY AND DISPLAYING ERROR
+const isRequired = (value) => (value === '' ? false : true);
+const isBetween = (length, min, max) =>
+    length < min || length > max ? false : true;
+
+//FUNCTION TO SHOW ERROR (RED BORDER FOR INPUT)
+const showError = (input) => {
+    const formField = input.parentElement;
+
+    formField.classList.remove('success');
+    formField.classList.add('error');
+};
+
+//FUNCTION TO SHOW SUCCESS (GREEN BORDER FOR INPUT)
+const showSuccess = (input) => {
+    const formField = input.parentElement;
+
+    formField.classList.remove('error');
+    formField.classList.add('success');
+};
+
+const debounce = (fn, delay = 500) => {
+    let timeoutId;
+    return (...args) => {
+        // cancel the previous timer
+        if (timeoutId) {
+            clearTimeout(timeoutId);
+        }
+        // setup a new timer
+        timeoutId = setTimeout(() => {
+            fn.apply(null, args);
+        }, delay);
+    };
+};
+
+form.addEventListener(
+    'input',
+    debounce(function(e) {
+        switch (e.target.id) {
+            case 'userName':
+                checkUsername();
+                break;
+            case 'userEmail':
+                checkEmail();
+                break;
+            case 'userGitHub':
+                checkGitHub();
+                break;
+            case 'userLinkedin':
+                checkLinkeDin();
+                break;
+            case 'userDiscord':
+                checkDiscord();
+                break;
+        }
+    })
+);
+
+/**SECOND FORM SLIDING FROM CENTER TO LEFT */
+/** SUBMITTING FORM EVENT */
+let submitBtn = document.getElementById('formSubmitBtn');
+submitBtn.addEventListener('click', function(event) {
+    event.preventDefault();
+    let isUsernameValid = checkUsername(),
+        isEmailValid = checkEmail(),
+        isGitHubValid = checkGitHub(),
+        isLinkedinValid = checkLinkeDin(),
+        isDiscordValid = checkDiscord();
+
+    let isFormValid =
+        isUsernameValid &&
+        isEmailValid &&
+        isGitHubValid &&
+        isLinkedinValid &&
+        isDiscordValid;
+
+    if (isFormValid) {
+        let container_name = document.getElementById('page2');
+        container_name.classList.add('formTranslatePage3');
+        var fadeEffect = setInterval(function() {
+            if (!container_name.style.opacity) {
+                container_name.style.opacity = 1;
+            }
+            if (container_name.style.opacity > 0) {
+                container_name.style.opacity -= 0.5;
+            } else {
+                clearInterval(fadeEffect);
+            }
+        }, 100);
+        container_name.style.visibility = 'hidden';
+        //CALLS THIRD PAGE (SUCCESSFULL RESPONSE)
+        callThirdForm();
+    } else {
+        goBack();
+    }
+});
+
 /**THIRD FROM SLIDING FROM RIGHT TO LEFT AND OCCUPIES CENTER */
 function callThirdForm() {
     document.getElementById('navDot3').checked = true;
@@ -15,30 +221,12 @@ function callThirdForm() {
     }, 300);
     container_name.style.visibility = 'visible';
 }
-/**SECOND FORM SLIDING FROM CENTER TO LEFT */
-let submitBtn = document.getElementById('formSubmitBtn');
-submitBtn.addEventListener('click', function(event) {
-    event.preventDefault();
-    let container_name = document.getElementById('page2');
-    container_name.classList.add('formTranslatePage3');
-    var fadeEffect = setInterval(function() {
-        if (!container_name.style.opacity) {
-            container_name.style.opacity = 1;
-        }
-        if (container_name.style.opacity > 0) {
-            container_name.style.opacity -= 0.5;
-        } else {
-            clearInterval(fadeEffect);
-        }
-    }, 100);
-    container_name.style.visibility = 'hidden';
-    callThirdForm();
-});
 
 /**SECOND FROM SLIDING FROM RIGHT TO LEFT AND OCCUPIES CENTER*/
 function callSecondForm() {
     document.getElementById('navDot2').checked = true;
     let container_name = document.getElementById('page2');
+    container_name.classList.remove('formTranslatePage2Reverse');
     container_name.classList.add('formTranslatePage2');
     var fadeEffect = setInterval(function() {
         if (!container_name.style.opacity) {
@@ -54,8 +242,10 @@ function callSecondForm() {
 }
 
 /** FIRST FORM SLIDING FROM CENTER TO LEFT */
+/**EVENT WHICH TAKES PLACES WHEN PRESSING THE ARROW BUTTON */
 function result() {
     let container_name = document.getElementById('page1');
+    container_name.classList.remove('formTranslatePage1Reverse');
     container_name.classList.add('formTranslatePage1');
     var fadeEffect = setInterval(function() {
         if (!container_name.style.opacity) {
@@ -69,4 +259,41 @@ function result() {
     }, 100);
     container_name.style.visibility = 'hidden';
     callSecondForm();
+}
+
+/**EVENT TO GO BACK*/
+function callFirstForm() {
+    document.getElementById('navDot1').checked = true;
+    let container_name = document.getElementById('page1');
+    container_name.classList.remove('formTranslatePage1');
+    container_name.classList.add('formTranslatePage1Reverse');
+    var fadeEffect = setInterval(function() {
+        if (!container_name.style.opacity) {
+            container_name.style.opacity = 0;
+        }
+        if (container_name.style.opacity < 1) {
+            container_name.style.opacity += 1;
+        } else {
+            clearInterval(fadeEffect);
+        }
+    }, 300);
+    container_name.style.visibility = 'visible';
+}
+
+function goBack() {
+    let container_name = document.getElementById('page2');
+    container_name.classList.remove('formTranslatePage2');
+    container_name.classList.add('formTranslatePage2Reverse');
+    var fadeEffect = setInterval(function() {
+        if (!container_name.style.opacity) {
+            container_name.style.opacity = 1;
+        }
+        if (container_name.style.opacity > 0) {
+            container_name.style.opacity -= 0.5;
+        } else {
+            clearInterval(fadeEffect);
+        }
+    }, 100);
+    container_name.style.visibility = 'hidden';
+    callFirstForm();
 }
