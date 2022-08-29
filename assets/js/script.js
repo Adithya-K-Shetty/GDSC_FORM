@@ -296,6 +296,11 @@ function callFirstForm() {
     container_name.style.visibility = 'visible';
 }
 
+function browseFiles() {
+    let chooseFileButton = document.getElementById("file_input");
+    chooseFileButton.click();
+}
+
 function goBack() {
     let container_name = document.getElementById('page2');
     container_name.classList.remove('formTranslatePage2');

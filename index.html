@@ -50,11 +50,11 @@
             <section id="page2" class="form2 formStyle">
 
                 <label for="resume_file" class="formLabel">Attach Resume</label>
-                <div class="file-drop-box">
+                <div class="file-drop-box" onclick="browseFiles()">
                     <i style="margin-left: 40px;" class="fa fa-upload" aria-hidden="true"></i><br> Drag and Drop here<br> or
                     <br>
                     <span style="cursor:pointer;">Browse Files</span><br>
-                    <input type="file" name="resume_file" id="file_input" value="Browse Files" accept=".pdf" />
+                    <input type="file" name="resume_file" value="Browse" id="file_input" accept=".pdf"  />
                 </div>
                 <label for="user_projects" class="formLabel">Add Your Projects</label>
                 <div class="addbox">
@@ -74,7 +74,6 @@
                 <input type="button" class="back-btn" value="BACK" onclick="goBack()">
             </section>
         </form>
-        <!-- <span id="response" class="responseText"><h3>Your Response has</h3><br><h3>been recorded</h3></span> -->
         <div id="response" class="responseText">
             <span>Your Response has</span><br>
             <span>been recorded</span>
