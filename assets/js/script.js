@@ -6,6 +6,8 @@ const userLinkedinInput = document.querySelector('#userLinkedin');
 const userDiscordInput = document.querySelector('#userDiscord');
 const form = document.querySelector('#userData');
 
+let oldDot = document.querySelector('#navDot1');
+
 //CHECKING USER NAME
 const checkUsername = () => {
     let valid = false;
@@ -204,9 +206,23 @@ submitBtn.addEventListener('click', function(event) {
     }
 });
 
+function sliderDotSwitch(dotNumber) {
+    
+    let newDot = document.getElementById(`navDot${dotNumber}`);
+
+    newDot.style.padding = '10px'; 
+    newDot.style.backgroundColor = 'black';
+     
+    oldDot.style.padding = '0px'; 
+    oldDot.style.backgroundColor = 'white';
+
+    oldDot = newDot;
+
+}
+
 /**THIRD FROM SLIDING FROM RIGHT TO LEFT AND OCCUPIES CENTER */
 function callThirdForm() {
-    document.getElementById('navDot3').checked = true;
+    sliderDotSwitch("3");
     let container_name = document.getElementById('response');
     container_name.classList.add('formTranslatePage4');
     var fadeEffect = setInterval(function() {
@@ -224,7 +240,7 @@ function callThirdForm() {
 
 /**SECOND FROM SLIDING FROM RIGHT TO LEFT AND OCCUPIES CENTER*/
 function callSecondForm() {
-    document.getElementById('navDot2').checked = true;
+    sliderDotSwitch("2");
     let container_name = document.getElementById('page2');
     container_name.classList.remove('formTranslatePage2Reverse');
     container_name.classList.add('formTranslatePage2');
@@ -263,7 +279,7 @@ function result() {
 
 /**EVENT TO GO BACK*/
 function callFirstForm() {
-    document.getElementById('navDot1').checked = true;
+    sliderDotSwitch("1");
     let container_name = document.getElementById('page1');
     container_name.classList.remove('formTranslatePage1');
     container_name.classList.add('formTranslatePage1Reverse');

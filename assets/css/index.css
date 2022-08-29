@@ -18,6 +18,33 @@
         font-family: 'Poppins', sans-serif;
         font-size: 40px;
     }
+
+    #nav-dots {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: auto;
+    }
+
+    .nav-dot {
+        display: inline-block;
+        width: 7px;
+        height: 7px;
+        background-color: white;
+        border-radius: 100px;
+        margin: 0px 7px 0px 7px;
+    }
+
+    #navDot1 {
+        display: inline-block;
+        overflow-x: hidden;
+        width: 7px;
+        height: 7px;
+        padding: 10px;
+        background-color: black;
+        border-radius: 300px;
+        margin: 0px 7px 0px 7px;
+    }
     
     .formContainer {
         padding: 0px 30px 0px 40px;
