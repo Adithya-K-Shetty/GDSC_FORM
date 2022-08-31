@@ -184,6 +184,56 @@
         bottom: 50%;
         left: 30%;
     }
+
+    #resumeGuidePopup {
+        display: none;
+        position: relative;
+        margin: 2em 0em 1em 0em;
+        z-index: 1;
+        padding: 0px 30px 0px 40px;
+        height: 40%;
+        bottom: 13%;
+        background: #2C2728;
+        box-shadow: 22px 19px 26px 4px rgba(0, 0, 0, 0.34);
+        border-radius: 20px;
+        max-height: 47%;
+    }
+
+    .closeButton {
+        display: inline-block;
+        position: relative;
+        left: 95%;
+        font-size: x-large;
+        font-stretch: expanded;
+        color: gray;
+        background: none;
+        border: none;
+        margin: 0.5em;
+    }
+
+    #resumeGuidePopup>p {
+        visibility: visible;
+        position: relative;
+        font-size: 1em;
+        margin: 2em 0em 1em 0em;
+        text-align: center;
+        display: inline-block;
+        color: #FFFFFF;
+        font-family: 'Poppins', sans-serif;
+        margin-bottom: 3px;
+    }
+
+    #resumeGuidePopup>h3 {
+        font-size: 2em;
+    }
+
+    #resumeGuide {
+        margin-top: 2rem;
+        width: 100%;
+        height: 15rem;
+        object-fit: contain;
+    }
+    
     
     .file-drop-box {
         display: block;

@@ -7,6 +7,7 @@ const userDiscordInput = document.querySelector('#userDiscord');
 const form = document.querySelector('#userData');
 
 let oldDot = document.querySelector('#navDot1');
+let popupVisible = false;
 
 //CHECKING USER NAME
 const checkUsername = () => {
@@ -220,6 +221,20 @@ function sliderDotSwitch(dotNumber) {
 
 }
 
+function togglePopup() {
+    let guidePopup = document.getElementById("resumeGuidePopup");
+    console.log(guidePopup.style.display);
+    if (popupVisible) {
+        guidePopup.style.display = "none";
+        popupVisible = false;
+        callSecondForm();
+    } else {
+        guidePopup.style.display = "block";
+        popupVisible = true;
+    }
+
+}
+
 /**THIRD FROM SLIDING FROM RIGHT TO LEFT AND OCCUPIES CENTER */
 function callThirdForm() {
     sliderDotSwitch("3");
@@ -274,7 +289,8 @@ function result() {
         }
     }, 100);
     container_name.style.visibility = 'hidden';
-    callSecondForm();
+    togglePopup();
+    // callSecondForm();
 }
 
 /**EVENT TO GO BACK*/

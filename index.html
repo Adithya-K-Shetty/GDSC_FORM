@@ -16,12 +16,18 @@
 <body>
     <div class="formContainer">
         <h3 id="formHeader">Fill Your Self</h3>
-
-        <form id="userData" action="">
-            <section id="nav-dots" >
+        <section id="nav-dots" >
                 <div class="nav-dot" id="navDot1"></div>
                 <div class="nav-dot" id="navDot2"></div>
                 <div class="nav-dot" id="navDot3"></div>
+        </section>
+        <form id="userData" action="">
+            <section id="resumeGuidePopup">
+                <input type="button" class="closeButton" onclick="togglePopup()" value='x'/>
+                <h3 id="formHeader">Uploading your Resume</h3>
+                <p id="check">Please upload your resume to your google drive.
+While sharing the link please make sure that the link is set to public as follows </p>
+                    <img id="resumeGuide" title="Resume Upload Guide" alt="Resume Upload Guide" src="./assets/images/resume_guide.jpg"/>
             </section>
             <section id="page1" class="form1 formStyle">
                 <div class="form-field">
@@ -74,6 +80,7 @@
                 <input type="button" class="back-btn" value="BACK" onclick="goBack()">
             </section>
         </form>
+        
         <div id="response" class="responseText">
             <span>Your Response has</span><br>
             <span>been recorded</span>
