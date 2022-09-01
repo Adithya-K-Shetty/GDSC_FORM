@@ -187,7 +187,7 @@
     }
     
 
-    #resumeGuidePopup {
+    /* #resumeGuidePopup {
         display: none;
         position: relative;
         margin: 2em 0em 1em 0em;
@@ -235,7 +235,7 @@
         height: 15rem;
         object-fit: contain;
     }
-    
+     */
     .infoIcon{
         display: inline-block;
         font-family: sans-serif;
@@ -387,18 +387,17 @@
     
     #resumeGuidePopup {
         display: none;
-        position: relative;
-        margin: 20% 10% 1em 0em;
+        position: absolute;
+        width: 40%;
+        height: 90%;
+        left: 30%;
+        top: 5%;
         z-index: 1;
-        padding: 0px 30px 0px 40px;
-        width: 100%;
-        height: 40%;
-        bottom: 13%;
         background: #2C2728;
+        padding: 0em 2em 0em 2em;
         box-shadow: 22px 19px 26px 4px rgba(0, 0, 0, 0.34);
         border: 1px solid #171717;
         border-radius: 20px;
-        max-height: 47%;
     }
     
     #resumeGuidePopup>p {
@@ -443,8 +442,6 @@
         height: 15rem;
         object-fit: contain;
     }
-    /*END OF TESTING*/
-    /* Responsive Design */
     
     @media only screen and (min-width: 200px) and (max-width: 767px) {
         body {
@@ -484,7 +481,11 @@
             transform: translate(-280px, 0);
         }
         #resumeGuidePopup {
-            margin-top: 40%;
+            position: absolute;
+            min-width: 90%;
+            left: 5%;
+            top: 5%;
+            z-index: 1;
         }
         #resumeGuidePopup>h3 {
             font-size: 24px;
