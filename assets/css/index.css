@@ -183,7 +183,9 @@
         position: relative;
         bottom: 50%;
         left: 30%;
+
     }
+    
 
     #resumeGuidePopup {
         display: none;
@@ -249,6 +251,52 @@
         text-align: center;
         width: 1.2em;
         border-radius: 200px;
+    }
+
+    .selectBox {
+        position: relative;
+    }
+
+
+    .selectDownArrow {
+        position: absolute;
+        top: 1.2em;
+        right: 0.1em;
+        display: block;
+        font-size: x-large;
+        padding-top: 0.3em;
+        padding-right: 0.2em;
+
+        pointer-events: none;
+    }
+
+    .selectBox > input:focus {
+        background-color: #D9D9D9;
+    }
+
+    #doiValues {
+        display: none;
+        position: fixed;
+        top: 12.3em;
+        width: 100%;
+        padding: 0px 0.5em 0.5em 0.5em;
+        margin-top: 0%;
+        margin-bottom: 15px;
+        border-radius: 0px 0px 10px 10px;
+        background-color: #D9D9D9;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 550;
+        font-size: 1.2rem;
+        border: 2px solid black;
+        outline: whitesmoke;
+        border-top: none;
+        border-right: none;
+        accent-color: black;
+    }
+
+    #doiValues > label {
+        width: 100%;
+        margin: 1em 1em 1em 1em;
     }
     
     .submit-btn {

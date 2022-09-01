@@ -8,6 +8,7 @@ const form = document.querySelector('#userData');
 
 let oldDot = document.querySelector('#navDot1');
 let popupVisible = false;
+let domainListVisible = false;
 
 //CHECKING USER NAME
 const checkUsername = () => {
@@ -336,4 +337,18 @@ function goBack() {
     }, 100);
     container_name.style.visibility = 'hidden';
     callFirstForm();
+}
+
+function toggleDomains() {
+    let domainList = document.getElementById("doiValues");
+    let container_name = document.getElementById('page2');
+    if (domainListVisible) {
+        domainList.style.display = "none";
+        domainListVisible = false;
+        callSecondForm();
+    } else {
+        // container_name.style.visibility = "hidden";
+        domainList.style.display = "block";
+        domainListVisible = true;
+    }
 }

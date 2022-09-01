@@ -65,10 +65,33 @@ While sharing the link please make sure that the link is set to public as follow
                     <i class="fa fa-plus-circle fa-plus-circle-place" style="cursor:pointer;" aria-hidden="true" onclick=""></i>
 
                 </div>
-                <label for="user_skills" class="formLabel">Skills</label>
+                <div class="selectBox">
+                    <label for="user_doi" class="formLabel">Domain of Interest</label>
+                    <input type="text" name="user_doi" id="userName" class="formInputStyle" onclick="toggleDomains()">
+
+                    <i class="fa fa-chevron-circle-down selectDownArrow" aria-hidden="true" ></i>
+                    <div class="selectValues" id="doiValues">
+
+                        <label for="web_dev"><input type="checkbox" id="web_dev" value="Web Development"/> Web Development </label><br>
+                        <label for="mob_dev">  <input type="checkbox" id="mob_dev" value="Mobile Development"> Mobile Development</input></label><br>
+                        <label for="game_dev">  <input type="checkbox" id="game_dev" value="Game Development"> Game Development</input></label><br>
+                        <label for="ui_ux_design">  <input type="checkbox" id="ui_ux_design" value="UI/UX Designing"> UI/UX Designing</input></label><br>
+                        <label for="cloud">  <input type="checkbox" id="cloud" value="Cloud Computing"> Cloud Computing</input></label><br>
+                        <label for="competitive">  <input type="checkbox" id="competitive" value="Competitive Programming "> Competitive Programming </input></label><br>
+                        <label for="ai">  <input type="checkbox" id="ai" value="AI/ML "> AI/ML </input></label><br>
+                    </div>
+                </div>
+                <label for="user_skills" class="formLabel">Other Skills</label>
                 <div class="addbox">
 
                     <input type="text" name="user_skills" class="formInputStyle"></input>
+                    <i class="fa fa-plus-circle fa-plus-circle-place" style="cursor:pointer;" aria-hidden="true" onclick=""></i>
+
+                </div>
+                <label for="user_interests" class="formLabel">Other Interests</label>
+                <div class="addbox">
+
+                    <input type="text" name="user_interests" class="formInputStyle"></input>
                     <i class="fa fa-plus-circle fa-plus-circle-place" style="cursor:pointer;" aria-hidden="true" onclick=""></i>
 
                 </div>
