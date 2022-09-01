@@ -260,12 +260,10 @@
 
     .selectDownArrow {
         position: absolute;
-        top: 1.2em;
-        right: 0.1em;
+        bottom: 1em;
+        right: 0.3em;
         display: block;
         font-size: x-large;
-        padding-top: 0.3em;
-        padding-right: 0.2em;
 
         pointer-events: none;
     }
@@ -279,7 +277,7 @@
         position: fixed;
         top: 12.3em;
         width: 100%;
-        padding: 0px 0.5em 0.5em 0.5em;
+        padding: 0px 0.5em 0.5em 0.2em;
         margin-top: 0%;
         margin-bottom: 15px;
         border-radius: 0px 0px 10px 10px;
@@ -292,11 +290,12 @@
         border-top: none;
         border-right: none;
         accent-color: black;
+        z-index: 2;
     }
 
     #doiValues > label {
         width: 100%;
-        margin: 1em 1em 1em 1em;
+        margin: 1em 1em 1em 0.2em;
     }
     
     .submit-btn {
@@ -353,7 +352,15 @@
     
     .addbox {
         display: flex;
-        align-items: baseline;
+        position: relative;
+    }
+
+    .addbox > i {
+        position: absolute;
+        display: block;
+        font-size: x-large;
+        bottom: 1em;
+        right: 0.3em;
     }
 
     
