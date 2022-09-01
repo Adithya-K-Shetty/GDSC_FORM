@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 
 <body>
@@ -23,6 +23,14 @@
                 <input type="radio" id="navDot2" value="2" style="accent-color: black;cursor:not-allowed;" name="nav-dots">
                 <input type="radio" id="navDot3" value="2" style="accent-color: black;cursor:not-allowed;" name="nav-dots">
             </fieldset>
+            <!----------- Testing ---------------->
+            <section id="resumeGuidePopup" class="animate__animated animate__bounceInDown">
+                <input type="button" class="closeButton" onclick="togglePopup()" value='x' />
+                <h3 id="formHeader">Uploading your Resume</h3>
+                <p id="check">Please upload your resume to your google drive. While sharing the link please make sure that the link is set to public as follows </p>
+                <img id="resumeGuide" title="Resume Upload Guide" alt="Resume Upload Guide" src="./assets/images/resume_guide.jpg" />
+            </section>
+            <!----------- End Of Testing ----------->
             <section id="page1" class="form1 formStyle">
                 <div class="form-field">
                     <label for="user_name" class="formLabel">Name</label>

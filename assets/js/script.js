@@ -6,6 +6,8 @@ const userLinkedinInput = document.querySelector('#userLinkedin');
 const userDiscordInput = document.querySelector('#userDiscord');
 const form = document.querySelector('#userData');
 
+let popupVisible = false;
+
 //CHECKING USER NAME
 const checkUsername = () => {
     let valid = false;
@@ -241,6 +243,20 @@ function callSecondForm() {
     container_name.style.visibility = 'visible';
 }
 
+/*RESUME GUIDE POPUP*/
+function togglePopup() {
+    let guidePopup = document.getElementById('resumeGuidePopup');
+    console.log(guidePopup.style.display);
+    if (popupVisible) {
+        guidePopup.style.display = 'none';
+        popupVisible = false;
+        callSecondForm();
+    } else {
+        guidePopup.style.display = 'block';
+        popupVisible = true;
+    }
+}
+
 /** FIRST FORM SLIDING FROM CENTER TO LEFT */
 /**EVENT WHICH TAKES PLACES WHEN PRESSING THE ARROW BUTTON */
 function result() {
@@ -258,7 +274,8 @@ function result() {
         }
     }, 100);
     container_name.style.visibility = 'hidden';
-    callSecondForm();
+    togglePopup();
+    // callSecondForm();
 }
 
 /**EVENT TO GO BACK*/
