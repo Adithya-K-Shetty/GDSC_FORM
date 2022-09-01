@@ -24,7 +24,7 @@
         <form id="userData" action="">
             <section id="resumeGuidePopup">
                 <input type="button" class="closeButton" onclick="togglePopup()" value='x'/>
-                <h3 id="formHeader">Uploading your Resume</h3>
+                <h3 id="formHeader">Uploading your Résumé</h3>
                 <p id="check">Please upload your resume to your google drive.
 While sharing the link please make sure that the link is set to public as follows </p>
                     <img id="resumeGuide" title="Resume Upload Guide" alt="Resume Upload Guide" src="./assets/images/resume_guide.jpg"/>
@@ -55,13 +55,9 @@ While sharing the link please make sure that the link is set to public as follow
 
             <section id="page2" class="form2 formStyle">
 
-                <label for="resume_file" class="formLabel">Attach Resume</label>
-                <div class="file-drop-box" onclick="browseFiles()">
-                    <i style="margin-left: 40px;" class="fa fa-upload" aria-hidden="true"></i><br> Drag and Drop here<br> or
-                    <br>
-                    <span style="cursor:pointer;">Browse Files</span><br>
-                    <input type="file" name="resume_file" value="Browse" id="file_input" accept=".pdf"  />
-                </div>
+                <label for="resume_link" class="formLabel">Résumé Link &nbsp;<span class="infoIcon" onclick="togglePopup()">i</span></label>
+                <input type="url" name="resume_link" id="resume_link"  class="formInputStyle"/>
+
                 <label for="user_projects" class="formLabel">Add Your Projects</label>
                 <div class="addbox">
 

@@ -210,6 +210,8 @@ submitBtn.addEventListener('click', function(event) {
 function sliderDotSwitch(dotNumber) {
     
     let newDot = document.getElementById(`navDot${dotNumber}`);
+    if (newDot == oldDot)
+        return;
 
     newDot.style.padding = '10px'; 
     newDot.style.backgroundColor = 'black';
@@ -223,12 +225,14 @@ function sliderDotSwitch(dotNumber) {
 
 function togglePopup() {
     let guidePopup = document.getElementById("resumeGuidePopup");
+    let container_name = document.getElementById('page2');
     console.log(guidePopup.style.display);
     if (popupVisible) {
         guidePopup.style.display = "none";
         popupVisible = false;
         callSecondForm();
     } else {
+        container_name.style.visibility = "hidden";
         guidePopup.style.display = "block";
         popupVisible = true;
     }
@@ -290,7 +294,6 @@ function result() {
     }, 100);
     container_name.style.visibility = 'hidden';
     togglePopup();
-    // callSecondForm();
 }
 
 /**EVENT TO GO BACK*/
