@@ -18,6 +18,33 @@
         font-family: 'Poppins', sans-serif;
         font-size: 40px;
     }
+
+    #nav-dots {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: auto;
+    }
+
+    .nav-dot {
+        display: inline-block;
+        width: 7px;
+        height: 7px;
+        background-color: white;
+        border-radius: 100px;
+        margin: 0px 7px 0px 7px;
+    }
+
+    #navDot1 {
+        display: inline-block;
+        overflow-x: hidden;
+        width: 7px;
+        height: 7px;
+        padding: 10px;
+        background-color: black;
+        border-radius: 300px;
+        margin: 0px 7px 0px 7px;
+    }
     
     .formContainer {
         padding: 0px 30px 0px 40px;
@@ -156,44 +183,119 @@
         position: relative;
         bottom: 50%;
         left: 30%;
+
     }
     
-    .file-drop-box {
-        display: block;
-        width: 100%;
-        padding: 10px 0px 10px 0px;
-        text-align: center;
-        line-height: 30px;
-        font-family: 'Poppins', sans-serif;
-        font-weight: bolder;
-        margin-bottom: 15px;
+
+    #resumeGuidePopup {
+        display: none;
+        position: relative;
+        margin: 2em 0em 1em 0em;
+        z-index: 1;
+        padding: 0px 30px 0px 40px;
+        height: 40%;
+        bottom: 13%;
+        background: #2C2728;
+        box-shadow: 22px 19px 26px 4px rgba(0, 0, 0, 0.34);
         border-radius: 20px;
-        background: #D9D9D9;
+        max-height: 47%;
     }
-    
-    .file-drop-box:hover, .file-drop-box:focus {
-        display: block;
-        width: 100%;
-        padding: 10px 0px 10px 0px;
+
+    .closeButton {
+        display: inline-block;
+        position: relative;
+        left: 95%;
+        font-size: x-large;
+        font-stretch: expanded;
+        color: gray;
+        background: none;
+        border: none;
+        margin: 0.5em;
+    }
+
+    #resumeGuidePopup>p {
+        visibility: visible;
+        position: relative;
+        font-size: 1em;
+        margin: 2em 0em 1em 0em;
         text-align: center;
-        line-height: 30px;
+        display: inline-block;
+        color: #FFFFFF;
         font-family: 'Poppins', sans-serif;
-        font-weight: bolder;
+        margin-bottom: 3px;
+    }
+
+    #resumeGuidePopup>h3 {
+        font-size: 2em;
+    }
+
+    #resumeGuide {
+        margin-top: 2rem;
+        width: 100%;
+        height: 15rem;
+        object-fit: contain;
+    }
+    
+    .infoIcon{
+        display: inline-block;
+        font-family: sans-serif;
+        background: black;
+        text-align: center;
+        width: 1.2em;
+        border-radius: 15px;
+    }
+
+    .infoIcon:hover{
+        background-color: white;
+        color: black;
+        text-align: center;
+        width: 1.2em;
+        border-radius: 200px;
+    }
+
+    .selectBox {
+        position: relative;
+    }
+
+
+    .selectDownArrow {
+        position: absolute;
+        bottom: 1em;
+        right: 0.3em;
+        display: block;
+        font-size: x-large;
+
+        pointer-events: none;
+    }
+
+    .selectBox > input:focus {
+        background-color: #D9D9D9;
+    }
+
+    #doiValues {
+        display: none;
+        position: fixed;
+        top: 12.3em;
+        width: 100%;
+        padding: 0px 0.5em 0.5em 0.2em;
+        margin-top: 0%;
         margin-bottom: 15px;
-        border-radius: 20px;
-        background: #eee9e9;
+        border-radius: 0px 0px 10px 10px;
+        background-color: #D9D9D9;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 550;
+        font-size: 1.2rem;
+        border: 2px solid black;
+        outline: whitesmoke;
+        border-top: none;
+        border-right: none;
+        accent-color: black;
+        z-index: 2;
     }
-    
-    .file-drop-box input {
-        visibility: hidden;
-    }
-    
-    .file-drop-box span {
-        color: #0083CC;
-    }
-    
-    .file-drop-box span:hover {
-        color: #086ca2;
+
+    #doiValues > label {
+        width: 100%;
+        margin: 1em 1em 1em 0.2em;
     }
     
     .submit-btn {
@@ -250,13 +352,17 @@
     
     .addbox {
         display: flex;
-        align-items: baseline;
-    }
-    
-    .fa {
         position: relative;
-        right: 20px;
     }
+
+    .addbox > i {
+        position: absolute;
+        display: block;
+        font-size: x-large;
+        bottom: 1em;
+        right: 0.3em;
+    }
+
     
     .responseText {
         visibility: hidden;
